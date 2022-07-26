@@ -11,6 +11,7 @@ alias gs='git status'
 alias vigs='vi $(git ls-files -m | xargs)'
 function gmb { git merge-base HEAD $1 }
 alias gdm='git diff $(gmb master) HEAD'
+alias vigdm='vi $(git diff --name-only `gmb master` HEAD)'
 alias be='bundle exec'
 alias bi='bundle install --quiet'
 alias pytest='python -m unittest discover'
