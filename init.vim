@@ -192,9 +192,9 @@ set ffs=unix,dos,mac
 set colorcolumn=100
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 set textwidth=100
-" Or 150 in a ruby file
-autocmd BufRead,BufNewFile *.rb set colorcolumn=150
-autocmd BufRead,BufNewFile *.rb set textwidth=150
+" Or 120 in a ruby file
+autocmd BufRead,BufNewFile *.rb set colorcolumn=120
+autocmd BufRead,BufNewFile *.rb set textwidth=120
 " and 72 in a gitcommmit
 autocmd FileType gitcommit set colorcolumn=72
 autocmd FileType gitcommit set textwidth=72
@@ -303,6 +303,9 @@ if !has('nvim')
 else
   set clipboard+=unnamedplus
 endif
+
+" ,r to run Rubocop -A on current file
+map <leader>r :w<enter>:!rubocop -A %<enter><enter>
 
 " Edit crontab files on OSX
 autocmd filetype crontab setlocal nobackup nowritebackup
