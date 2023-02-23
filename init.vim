@@ -122,6 +122,9 @@ let g:airline#extensions#ale#enabled = 1
 nmap <silent> <A-k> <Plug>(ale_previous_wrap)
 nmap <silent> <A-j> <Plug>(ale_next_wrap)
 highlight ALEWarning ctermbg=Black
+" Don't interrupt my thinking with instant error messages
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 " *****************************************************************************
 " vim-easy-align
 " *****************************************************************************
