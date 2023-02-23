@@ -1,8 +1,8 @@
 # Setup fzf (handle various environments)
-if [[ -a "/usr/local/opt/fzf" ]]; then
+if [[ -a "/opt/homebrew/opt/fzf" ]]; then
 	# OS X
-	FZF_SHELL_PATH="/usr/local/opt/fzf/shell"
-	FZF_BIN_PATH="/usr/local/opt/fzf/bin"
+	FZF_SHELL_PATH="/opt/homebrew/opt/fzf/shell"
+	FZF_BIN_PATH="/opt/homebrew/opt/fzf/bin"
 elif [[ -a "/usr/share/fzf" ]]; then
 	# Linux
 	FZF_SHELL_PATH="/usr/share/fzf"
@@ -18,7 +18,9 @@ fi
 
 # $PATH
 # If fzf is not already found in $PATH, check to see if it's because $FZF_BIN_PATH is missing from $PATH, and add it if so
-type fzf &>/dev/null || { "$PATH" != *"$FZF_BIN_PATH"* && export PATH="$PATH:$FZF_BIN_PATH" ; }
+type fzf &>/dev/null || if [[ ! "$PATH" == *"$FZF_BIN_PATH"* ]]; then
+	export PATH="${PATH:+${PATH}:}$FZF_BIN_PATH"
+fi
 # Confirm that it's loaded
 type fzf &>/dev/null || { echo "Could not locate fzf" && return ; }
 
