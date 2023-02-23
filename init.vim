@@ -223,10 +223,6 @@ filetype indent on
 
 " Use spaces instead of tabs
 set expandtab
-" Except in JS
-au BufRead,BufNewFile *js set noexpandtab
-" And C
-au BufRead,BufNewFile *.c,*h set noexpandtab
 
 " 1 tab == 2 spaces
 set shiftwidth=2
