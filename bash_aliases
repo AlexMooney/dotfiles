@@ -17,8 +17,8 @@ alias bi='bundle install --quiet'
 alias pytest='python -m unittest discover'
 alias weather='curl "http://wttr.in/Seattle"'
 
-alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='ruby -e "require %[cgi]; puts CGI.unescape(ARGF.read)"'
+alias urlencode='ruby -e "require %[cgi]; puts CGI.escape(ARGF.read)"'
 
 alias passphrase='cd /usr/share/dict; for n in {1..10}; do for f in propernames connectives words words; do i=`od -vAn -N4 -tu4 < /dev/urandom`; let "j = $i%$(wc -l $f | xargs echo | cut -d\  -f1)"; head -$j $f| tail -1; done | xargs ; done; cd -'
 
