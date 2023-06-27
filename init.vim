@@ -168,6 +168,9 @@ nnoremap <leader>c :nohlsearch<CR>
 " For regular expressions turn magic on
 set magic
 
+" Disable quote concealing in json files
+let g:vim_json_conceal=0
+
 " Show matching brackets when text indicator is over them
 set showmatch
 "
@@ -268,7 +271,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-map <leader><leader>w :call DeleteTrailingWS()<cr>
+map <leader>w :call DeleteTrailingWS()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
@@ -289,20 +292,17 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
 " preload the p yank buffer with binding.pry line
-map <leader><leader>p Obinding.pry if true<esc>
-map <leader>pdb Oimport pdb; pdb.set_trace()<esc>j
+map <leader>p Obinding.pry<esc>
 
-map <leader>nonp /\(\p\\|$\)\@!.<esc>
 if !has('nvim')
   set clipboard=unnamed
 else
   set clipboard+=unnamedplus
 endif
 
+" ,f to copy the filename to the clipboard
+map <leader>f :let @+=expand('%')<enter>
 " ,r to run Rubocop -A on current file
 map <leader>r :w<enter>:!rubocop -A %<enter><enter>
 
