@@ -27,6 +27,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/closetag.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'dense-analysis/ale'
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 " END PLUG STUFF
@@ -134,6 +135,11 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " *****************************************************************************
+" folke/tokyonight.nvim
+set termguicolors
+set background=dark
+colorscheme tokyonight-night
+" *****************************************************************************
 " END PLUGIN DESCRIPTIONS
 
 " load filetype-specific indent files
@@ -186,7 +192,6 @@ set novisualbell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
-set background=dark
 
 " Don't hide characters in LaTeX
 let g:tex_fast= ""
