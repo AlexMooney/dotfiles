@@ -13,7 +13,7 @@ function gmb { git merge-base HEAD $1 }
 alias gdm='git diff $(gmb master) HEAD'
 alias vigdm='vi $(git diff --name-only `gmb master` HEAD)'
 alias be='bundle exec'
-alias bi='bundle install --quiet'
+alias bi='bundle install'
 alias pytest='python -m unittest discover'
 alias weather='curl "http://wttr.in/Seattle"'
 
