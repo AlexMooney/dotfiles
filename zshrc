@@ -76,12 +76,6 @@ export EDITOR='nvim'
 
 # My stuff starts here
 
-# Powerlevel9k theme settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode status time dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv rbenv)
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -97,7 +91,7 @@ SAVEHIST=100000
 
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-[[ -f ~/.iterm2_shell_integration.zsh ]] && source "${HOME}/.iterm2_shell_integration.zsh"
+# [[ -f ~/.iterm2_shell_integration.zsh ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 [[ -f ~/.fresh/build/shell.sh ]] && source ~/.fresh/build/shell.sh
 [[ -f ~/.local_aliases ]] && source ~/.local_aliases
 [[ -f ~/bin/z ]] && source ~/bin/z
